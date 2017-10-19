@@ -13,7 +13,7 @@ public class ManageUserDao extends HibernateDaoSupport implements IManageUserDao
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<TbAdmin> listTbAdmin() {
-		return this.getHibernateTemplate().find("from TbAdmin s");
+		return (List<TbAdmin>)this.getHibernateTemplate().find("from TbAdmin s");
 	}
 	
 }

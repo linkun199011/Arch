@@ -38,7 +38,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<AppBaseInfo> listAppBaseInfo() throws Exception {
-		return getHibernateTemplate().find(
+		return (List<AppBaseInfo>)getHibernateTemplate().find(
 				"from AppBaseInfo s where isFjnxApp = 'Y'");
 	}
 
@@ -315,7 +315,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<DicAppServiceType> listDicAppServiceType() {
-		return getHibernateTemplate().find("from DicAppServiceType s");
+		return (List<DicAppServiceType>)getHibernateTemplate().find("from DicAppServiceType s");
 	}
 
 	@Override
@@ -387,7 +387,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@Override
 	public List<AppServiceDetail> qryAppServiceDetailByServiceId(
 			Integer appServiceId) {
-		return getHibernateTemplate().find(
+		return (List<AppServiceDetail>)getHibernateTemplate().find(
 				"from AppServiceDetail where appServiceId=?", appServiceId);
 	}
 
@@ -400,7 +400,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@Override
 	public List<AppServiceDetailTmp> qryAppServiceDetailTmpByServiceId(
 			Integer appServiceId) {
-		return getHibernateTemplate().find(
+		return (List<AppServiceDetailTmp>)getHibernateTemplate().find(
 				"from AppServiceDetailTmp where appServiceId=?", appServiceId);
 	}
 
@@ -429,7 +429,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 			Integer pubAppServiceId) {
 
 		@SuppressWarnings("unchecked")
-		List<AppServiceTmp> list = getHibernateTemplate()
+		List<AppServiceTmp> list = (List<AppServiceTmp>)getHibernateTemplate()
 				.find("from AppServiceTmp s where s.flowStatus != '审核通过' and s.pubAppServiceId=?",
 						pubAppServiceId);
 
@@ -445,7 +445,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<DicFlowStatus> listDicFlowStatus() {
-		return this.getHibernateTemplate().find("from DicFlowStatus s");
+		return (List<DicFlowStatus>)this.getHibernateTemplate().find("from DicFlowStatus s");
 	}
 
 	@Override
@@ -456,7 +456,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 		String prevStatus = "编辑中";
 
 		@SuppressWarnings("unchecked")
-		List<AppServiceTmp> appServiceTmpList = ht
+		List<AppServiceTmp> appServiceTmpList = (List<AppServiceTmp>)ht
 				.find("from AppServiceTmp s where s.projectId=? and s.modifyUserId=? and s.flowStatus=?",
 						projectId, modifyUser, prevStatus);
 
@@ -477,7 +477,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 
 		// 只针对已在组内确认状态的服务
 		@SuppressWarnings("unchecked")
-		List<AppServiceTmp> appServiceTmpList = ht.find(
+		List<AppServiceTmp> appServiceTmpList = (List<AppServiceTmp>)ht.find(
 				"from AppServiceTmp s where s.projectId=? and s.flowStatus=?",
 				projectId, prevStatus);
 
@@ -496,7 +496,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@Override
 	public List<AppServiceTmp> getAppServiceTmpListByProjectAndModifyUserForGroupCheck(
 			String projectName, String modifyUser) {
-		return getHibernateTemplate()
+		return (List<AppServiceTmp>)getHibernateTemplate()
 				.find("From AppServiceTmp a where a.projectId=? and a.modifyUserId=? and a.flowStatus!=?",
 						projectName, modifyUser, "待项目组确认");
 	}
@@ -572,8 +572,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@Override
 	public List<AppServiceTmp> getAppServiceTmpListByProjectAndStatus(
 			String projectId, String flowStatus) {
-		return this
-				.getHibernateTemplate()
+		return (List<AppServiceTmp>)this.getHibernateTemplate()
 				.find("From AppServiceTmp a where a.projectId =? and a.flowStatus =?",
 						projectId, flowStatus);
 
@@ -583,8 +582,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@Override
 	public List<AppServiceTmp> listAppServiceTmpNotUnderDepCheckByProjectName(
 			String projectName) {
-		return this
-				.getHibernateTemplate()
+		return (List<AppServiceTmp>)this.getHibernateTemplate()
 				.find("From AppServiceTmp a where a.projectId =? and a.flowStatus not in (?,?)",
 						projectName, "待架构部确认", "确认待发布");
 	}
@@ -592,7 +590,7 @@ public class ManageAppCoopDao extends HibernateDaoSupport implements
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<AppServiceTmp> listAppServiceTmpByProjectName(String projectName) {
-		return this.getHibernateTemplate().find(
+		return (List<AppServiceTmp>)this.getHibernateTemplate().find(
 				"From AppServiceTmp a where a.projectId =?", projectName);
 	}
 
