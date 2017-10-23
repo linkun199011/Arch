@@ -35,7 +35,9 @@ public class SSOUtil {
 	private SSOUtil() throws Exception{
 		
 		URL url = SSOUtil.class.getClassLoader().getResource(servConf);
+		System.out.println("===============LinKun test: Url path : " + url.toString());
 		String path = url.getPath();
+		System.out.println("===============LinKun test: serverConfig path : " + path);
 		
 		InputStream in = new BufferedInputStream(new FileInputStream(path));
 		prop.load(in);
