@@ -679,11 +679,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.axis2/mex -->
-        <dependency>
-            <groupId>org.apache.axis2</groupId>
-            <artifactId>mex</artifactId>
-            <version>1.6.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.axis2</groupId>-->
+            <!--<artifactId>mex</artifactId>-->
+            <!--<version>1.6.2</version>-->
+        <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.neethi/neethi -->
         <dependency>
@@ -701,11 +701,11 @@
 
 
         <!-- https://mvnrepository.com/artifact/ojdbc/ojdbc -->
-        <dependency>
-            <groupId>ojdbc</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>14</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ojdbc</groupId>-->
+            <!--<artifactId>ojdbc</artifactId>-->
+            <!--<version>14</version>-->
+        <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tribes -->
         <dependency>
