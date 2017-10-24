@@ -40,7 +40,7 @@
 		</property>
 		<property name="mappingLocations">
 			<list>
-				<value>classpath:/com/arch/beans/*.hbm.xml</value>
+				<value>classpath:*.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
