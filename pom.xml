@@ -880,7 +880,8 @@
     <build>
         <!-- 该元素设置了项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对
              于pom.xml的相对路径。 -->
-        <sourceDirectory>src/main/webapp/pages, src/main/java</sourceDirectory>
+        <!--<sourceDirectory>src/main/webapp/pages, src/main/java</sourceDirectory>-->
+        <!--<sourceDirectory>src/main/java</sourceDirectory>-->
         <!-- 该元素设置了项目脚本源码目录，该目录和源码目录不同：绝大多数情况下，该目录下的内容会
              被拷贝到输出目录(因为脚本是被解释的，而不是被编译的)。 -->
         <!--<scriptSourceDirectory></scriptSourceDirectory>-->
@@ -901,6 +902,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
+                    <includes>
+                        <include>src/main/webapp/pages</include>
+                        <include>src/main/java</include>
+                    </includes>
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
