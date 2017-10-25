@@ -9,24 +9,24 @@
 
 		<!-- 定义用户管理的项目方法映射 -->
 		<action name="user*" class="userAction" method="{1}">
-			<result name="input" type="redirect">/login.jsp</result>
-			<result name="loginFail">/login.jsp</result>
-			<result name="loginSuccess" type="redirect">/index.jsp</result> 
-			<result name="responseSuccess">/userResponse.jsp</result>
-			<result name="responseFail">/userResponse.jsp</result>
+			<result name="input" type="redirect">/pages/login.jsp</result>
+			<result name="loginFail">/pages/login.jsp</result>
+			<result name="loginSuccess" type="redirect">/pages/index.jsp</result>
+			<result name="responseSuccess">/pages/userResponse.jsp</result>
+			<result name="responseFail">/pages/userResponse.jsp</result>
 		</action>
 
 		<!-- 定义应用间协作的相关管理方法映射 -->
 		<action name="*AppCoop" class="appCoopAction" method="{1}">
-			<result name="update">/updateAppCoop.jsp</result>
-			<result name="input">/manageAppCoop.jsp</result>
-			<result name="edit">/manageAppCoop.jsp</result>
-			<result name="fail">/updateAppCoop.jsp</result>
-			<result name="success">/updateAppCoop.jsp</result>
-			<result name="view">/viewAppCoop.jsp</result>
-			<result name="depCheck">/depCheck.jsp</result>
-			<result name="up" type="redirectAction">/upShowServRel.action</result>
-			<result name="down" type="redirectAction">/downShowServRel.action</result>
+			<result name="update">/pages/updateAppCoop.jsp</result>
+			<result name="input">/pages/manageAppCoop.jsp</result>
+			<result name="edit">/pages/manageAppCoop.jsp</result>
+			<result name="fail">/pages/updateAppCoop.jsp</result>
+			<result name="success">/pages/updateAppCoop.jsp</result>
+			<result name="view">/pages/viewAppCoop.jsp</result>
+			<result name="depCheck">/pages/depCheck.jsp</result>
+			<result name="up" type="redirectAction">/pages/upShowServRel.action</result>
+			<result name="down" type="redirectAction">/pages/downShowServRel.action</result>
 		</action>
 
 		<action name="initAppCoopAction" class="appCoopAction" method="init"></action>
@@ -34,41 +34,41 @@
 
 		<!-- 定义查询所有应用间协作的方法映射 -->
 		<action name="queryServRel" class="appCoopAction" method="query">
-			<result name="input">/showServRel.jsp</result>
+			<result name="input">/pages/showServRel.jsp</result>
 		</action>
 
 		<action name="initServRel" class="showAppRelAction" method="init">
-			<result name="input">/showServRel.jsp</result>
+			<result name="input">/pages/showServRel.jsp</result>
 		</action>
 		
 		<action name="checkForQA" class="appCoopAction" method="checkForQA">
-			<result name="QA">/QACheck.jsp</result>
+			<result name="QA">/pages/QACheck.jsp</result>
 		</action>
 		
 		<action name="updateProjectWhiteList" class="appCoopAction" method="updateProjectWhiteList">
-			<result name="QA">/QACheck.jsp</result>
+			<result name="QA">/pages/QACheck.jsp</result>
 		</action>
 		
 		<action name="removeFromProjectWhiteList" class="appCoopAction" method="removeFromProjectWhiteList">
-			<result name="QA">/QACheck.jsp</result>
+			<result name="QA">/pages/QACheck.jsp</result>
 		</action>
 		
 
 		<!-- 定义 -->
 		<action name="*ShowServRel" class="showAppRelAction" method="{1}">
-			<result name="down">/drawServRel.jsp</result>
-			<result name="up">/listUpServRel.jsp</result>
-			<result name="query" type="redirectAction">/queryServRel.action</result>
+			<result name="down">/pages/drawServRel.jsp</result>
+			<result name="up">/pages/listUpServRel.jsp</result>
+			<result name="query" type="redirectAction">/pages/queryServRel.action</result>
 		</action>
 
 		<!-- -->
 		<action name="showUpServRel" class="showAppRelAction" method="showUp">
-			<result name="showUp">/drawServRel.jsp</result>
+			<result name="showUp">/pages/drawServRel.jsp</result>
 		</action>
 
 		<action name="*SysRel" class="showSysRelAction" method="{1}">
-			<result name="input">/showSysRel.jsp</result>
-			<result name="draw">/drawSysRel.jsp</result>
+			<result name="input">/pages/showSysRel.jsp</result>
+			<result name="draw">/pages/drawSysRel.jsp</result>
 		</action>
 
 	</package>

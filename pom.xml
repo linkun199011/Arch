@@ -436,7 +436,6 @@
         </dependency>
 
 
-
         <!-- commons Package start-->
         <dependency>
             <groupId>commons-cli</groupId>
@@ -680,9 +679,9 @@
 
         <!-- https://mvnrepository.com/artifact/org.apache.axis2/mex -->
         <!--<dependency>-->
-            <!--<groupId>org.apache.axis2</groupId>-->
-            <!--<artifactId>mex</artifactId>-->
-            <!--<version>1.6.2</version>-->
+        <!--<groupId>org.apache.axis2</groupId>-->
+        <!--<artifactId>mex</artifactId>-->
+        <!--<version>1.6.2</version>-->
         <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.neethi/neethi -->
@@ -702,9 +701,9 @@
 
         <!-- https://mvnrepository.com/artifact/ojdbc/ojdbc -->
         <!--<dependency>-->
-            <!--<groupId>ojdbc</groupId>-->
-            <!--<artifactId>ojdbc</artifactId>-->
-            <!--<version>14</version>-->
+        <!--<groupId>ojdbc</groupId>-->
+        <!--<artifactId>ojdbc</artifactId>-->
+        <!--<version>14</version>-->
         <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tribes -->
@@ -824,7 +823,6 @@
         </dependency>
 
 
-
         <!-- https://mvnrepository.com/artifact/regexp/regexp -->
         <dependency>
             <groupId>regexp</groupId>
@@ -880,6 +878,22 @@
     </dependencies>
 
     <build>
+        <!-- 该元素设置了项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对
+             于pom.xml的相对路径。 -->
+        <sourceDirectory>src/main/webapp/pages, src/main/java</sourceDirectory>
+        <!-- 该元素设置了项目脚本源码目录，该目录和源码目录不同：绝大多数情况下，该目录下的内容会
+             被拷贝到输出目录(因为脚本是被解释的，而不是被编译的)。 -->
+        <!--<scriptSourceDirectory></scriptSourceDirectory>-->
+
+        <!-- 该元素设置了项目单元测试使用的源码目录，当测试项目的时候，构建系统会编译目录里的源码。
+             该路径是相对于pom.xml的相对路径。 -->
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <!-- 被编译过的应用程序class文件存放的目录。 -->
+        <!--<outputDirectory></outputDirectory>-->
+
+        <!-- 被编译过的测试class文件存放的目录。 -->
+        <!--<testOutputDirectory></testOutputDirectory>-->
+
         <plugins>
             <!-- 统一源代码编译输出的JDK版本 -->
             <plugin>
