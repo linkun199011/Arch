@@ -888,7 +888,7 @@
 
         <!-- 该元素设置了项目单元测试使用的源码目录，当测试项目的时候，构建系统会编译目录里的源码。
              该路径是相对于pom.xml的相对路径。 -->
-        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <!--<testSourceDirectory>src/test/java</testSourceDirectory>-->
         <!-- 被编译过的应用程序class文件存放的目录。 -->
         <!--<outputDirectory></outputDirectory>-->
 
@@ -902,10 +902,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <includes>
-                        <include>src/main/webapp/pages</include>
-                        <include>src/main/java</include>
-                    </includes>
+                    <!--<includes>-->
+                        <!--<include>src/main/webapp/pages</include>-->
+                        <!--<include>src/main/java</include>-->
+                    <!--</includes>-->
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
