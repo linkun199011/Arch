@@ -916,9 +916,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <skipTests>true</skipTests>
+                    <skipTests>false</skipTests>
                 </configuration>
             </plugin>
+
             <!-- 集成Tomcat插件 -->
             <!--<plugin>-->
             <!--<groupId>org.apache.tomcat.maven</groupId>-->
